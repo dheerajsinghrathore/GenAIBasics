@@ -1,4 +1,4 @@
-from langchain_text_splitters import CharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 text="""Artificial Intelligence is changing the world by
           making technology smarter and more efficient. It
           helps automate many tasks that once required human effort,
@@ -10,7 +10,7 @@ text="""Artificial Intelligence is changing the world by
           technologies like virtual assistants, recommendation systems,
           and self-driving cars.
 """
-splitter=CharacterTextSplitter(separator="\n",chunk_size=30,chunk_overlap=0)
+splitter=RecursiveCharacterTextSplitter(chunk_size=30,chunk_overlap=0)
 chunks=splitter.split_text(text)
 print(len(chunks))
 print(chunks)
